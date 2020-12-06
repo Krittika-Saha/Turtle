@@ -1,31 +1,17 @@
-import turtle as t
-import random
+def extract_colors():
+  import colorgram
+  rgb_colors = []
+  image_colors = colorgram.extract('hirst_painting.jpg', 100)
 
-timmy = t.Turtle()
-t.colormode(255)
+  for color in image_colors:
+    r = color.rgb.r
+    g = color.rgb.g
+    b = color.rgb.b
 
-def random_color():
-  r = random.randint(0, 255)
-  g = random.randint(0, 255)
-  b = random.randint(0, 255)
-  color_tuple = (r, g, b)
-  return color_tuple
-
-timmy.shape('classic')
-colors = ['#b088f9', '#bedcfa', '#da9ff9', '#98acf8', '#d35d6e', '#ff8e71', '#fca3cc','#9088d4','#52057b','#006a71','#fcdada','#41aea9','#0d7377']
-directions = [0, 90, 180, 270]
-
-timmy.speed('fastest')
-def draw_circle(gap_size):
-  for i in range(360//gap_size):
-    timmy.circle(100)
-    timmy.setheading(gap_size)
-    gap_size += 5
-    timmy.color(random.choice(colors))
-
-draw_circle(5)
-
-
-
-screen = t.Screen()
-screen.exitonclick()
+    color_tuple = (r, g, b)
+    rgb_colors.append(color_tuple)
+  print(rgb_colors)
+ 
+extract_colors()
+color_list = [(233, 220, 226), (218, 223, 230), (230, 207, 91), (225, 149, 91), (122, 167, 187), (35, 110, 158), (163, 13, 22), (127, 177, 145), (233, 81, 49), (202, 67, 27), (192, 186, 23), (174, 18, 13), (33, 129, 49), (7, 99, 37), (13, 64, 39), (12, 41, 76), (242, 203, 4), (139, 79, 92), (88, 13, 20), (53, 166, 76), (51, 23, 19), (180, 134, 146), (6, 64, 137), (213, 68, 75), (230, 170, 161), (49, 151, 191), (77, 133, 186), (175, 204, 176), (165, 
+202, 210), (223, 171, 176), (176, 187, 213), (253, 6, 5), (254, 4, 17), (37, 75, 86)]
